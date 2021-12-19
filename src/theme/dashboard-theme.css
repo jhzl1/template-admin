@@ -1,0 +1,15 @@
+.link-navbar {
+  @apply w-full bg-gray-100 rounded-md font-medium transition-all duration-200 text-slate-600 hover:bg-gray-200 border;
+}
+
+.sublink-navbar {
+  @apply w-full border-l-2 py-2 pl-8 text-slate-600 font-medium transition-all duration-200 hover:border-slate-600;
+}
+
+.topbar-general {
+  @apply w-full  backdrop-blur-md bg-white/80 h-16  sticky top-5 left-auto z-50  self-start rounded-md  mt-2 transition-all duration-200;
+}
+
+.topbar-on-scroll {
+  @apply shadow-xl  mt-0;
+}
