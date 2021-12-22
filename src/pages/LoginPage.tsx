@@ -9,10 +9,16 @@ const LoginPage = () => {
   return (
     <div className="unprotected-screen-container">
       <div className="bg-white p-10 rounded-xl shadow-2xl flex flex-col items-center w-1/4">
+        <img
+          src={require("../assets/img/unidigital-black.jpg")}
+          alt="Corporacion Unidigital"
+          className="h-14 mb-5"
+        />
+
         <Text
           fontSize="2xl"
           fontWeight="bold"
-          mb="3"
+          mb="1"
           className="text-slate-600"
         >
           Iniciar sesión

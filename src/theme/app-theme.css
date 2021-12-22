@@ -26,9 +26,17 @@
 
 #app {
   font-family: "Inter";
-  @apply text-gray-500;
+  @apply text-gray-500 dark:text-gray-300 transition-all duration-200;
 }
 
 .full-center {
   @apply flex justify-center items-center;
+}
+
+.transitions {
+  @apply transition-all duration-200;
+}
+
+.btn-link {
+  @apply bg-gray-100 text-center mt-2 p-2 rounded-lg hover:bg-gray-200 dark:bg-slate-800 dark:text-gray-100 dark:hover:bg-slate-700;
 }

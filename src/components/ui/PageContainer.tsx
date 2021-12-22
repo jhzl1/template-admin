@@ -12,7 +12,7 @@ const PageContainer: FC<PageContainerProps> = ({
   bgTransparent = false,
 }) => {
   return (
-    <div className=" mt-5">
+    <div className="mt-4">
       <h2 className="text-2xl mb-3 font-medium text-slate-700">{titlePage}</h2>
       <div
         className={`bg-${

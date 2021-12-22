@@ -1,52 +1,63 @@
-import { Button } from "@chakra-ui/react";
+import { Alert, AlertIcon, Button } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { FC } from "react";
+import { Navigate } from "react-router-dom";
 import { initialValues, schemaLogin } from "../config/forms/formLogin";
+import useAuth from "../hooks/useAuth";
 import { FormLoginProps } from "../interfaces/forms/formLogin";
+import { routes } from "../routes/routes";
 import CustomForm from "./forms/CustomForm";
 import CustomInput from "./forms/CustomInput";
+import LoadingIndicator from "./ui/LoadingIndicator";
 
 const FormLogin: FC = () => {
-  const handleSubmit = (data: FormLoginProps) => {
-    console.log(data);
+  const { status, login, errorMsg } = useAuth();
+
+  const handleSubmit = async (data: FormLoginProps) => {
+    await login(data);
   };
 
-  //   const ValidateWithApi = () => {
-  //     const { setFieldError, setFieldTouched } = useFormikContext();
-  //     useEffect(() => {
-  //       if (test) {
-  //         setFieldTouched("password", true, false);
-  //         setFieldError("password", "No es valida");
-  //       }
-  //     }, [setFieldError, setFieldTouched]);
+  const { home } = routes;
 
-  //     return null;
-  //   };
+  if (status === "is-authenticated") return <Navigate to={home} />;
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={schemaLogin}
-    >
-      {({ isSubmitting }) => (
-        <CustomForm>
-          <CustomInput placeholder="Email" name="email" showLabel />
-          <CustomInput
-            placeholder="Contraseña"
-            name="password"
-            type="password"
-            showLabel
-          />
-
-          {/* <ValidateWithApi /> */}
-
-          <Button colorScheme="messenger" my="2" type="submit">
-            Iniciar sesión
-          </Button>
-        </CustomForm>
+    <>
+      {errorMsg && (
+        <Alert status="error" rounded="xl">
+          <AlertIcon />
+          <span className="text-slate-700">{errorMsg}</span>
+        </Alert>
       )}
-    </Formik>
+
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={schemaLogin}
+      >
+        {({ isSubmitting }) => (
+          <CustomForm>
+            <CustomInput placeholder="Email" name="email" showLabel />
+            <CustomInput
+              placeholder="Contraseña"
+              name="password"
+              type="password"
+              showLabel
+            />
+
+            {/* <ValidateWithApi /> */}
+
+            {isSubmitting ? (
+              <LoadingIndicator />
+            ) : (
+              <Button colorScheme="messenger" my="2" type="submit">
+                Iniciar sesión
+              </Button>
+            )}
+          </CustomForm>
+        )}
+      </Formik>
+    </>
   );
 };
 

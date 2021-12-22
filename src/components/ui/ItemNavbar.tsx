@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import {
   Accordion,
@@ -27,7 +27,7 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
       {subnavItem ? (
         <Accordion allowMultiple>
           <AccordionItem border={0}>
-            <div className="link-navbar mb-3">
+            <div className="link-navbar mb-3 transitions">
               <AccordionButton
                 borderColor="transparent"
                 _focus={{
@@ -40,9 +40,7 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
                   fontWeight="medium"
                   className="flex "
                 >
-                  <span className="mr-2 bg-white p-1 rounded-lg shadow ">
-                    {icon}
-                  </span>
+                  <span className="icon-link transitions">{icon}</span>
 
                   {title}
                 </Box>
@@ -59,7 +57,7 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
                 >
                   <NavLink
                     to={path || "/dashboard"}
-                    className="sublink-navbar "
+                    className="sublink-navbar transitions"
                   >
                     {title}
                   </NavLink>
@@ -71,9 +69,9 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
         <div className="flex">
           <NavLink
             to={path || "/dashboard"}
-            className="link-navbar p-2 flex items-center "
+            className="link-navbar p-2 flex items-center transitions"
           >
-            <span className="mx-2 bg-white p-1 rounded-lg shadow ">{icon}</span>
+            <span className="icon-link ml-2 transitions">{icon}</span>
             {title}
           </NavLink>
         </div>

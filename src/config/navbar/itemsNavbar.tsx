@@ -15,5 +15,5 @@ export const itemsNavbar: ItemNavbarProps[] = [
       { title: "Administradores", path: "/" },
     ],
   },
-  { title: "Fondos globales", path: "/", icon: <BiMoney /> },
+  { title: "Fondo global", path: "/", icon: <BiMoney /> },
 ];

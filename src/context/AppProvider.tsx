@@ -1,16 +1,18 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter } from "react-router-dom";
-import { FC } from "react";
+import AuthProvider from "../providers/auth/AuthProvider";
+import ThemeProvider from "./ThemeProvider";
 
-interface Props {
+const AppProvider = ({
+  children,
+}: {
   children: JSX.Element | JSX.Element[];
-}
-
-const AppProvider: FC<Props> = ({ children }) => {
+}) => {
   return (
-    <BrowserRouter>
-      <ChakraProvider>{children}</ChakraProvider>
-    </BrowserRouter>
+    <AuthProvider>
+      <ThemeProvider>
+        <ChakraProvider>{children}</ChakraProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 

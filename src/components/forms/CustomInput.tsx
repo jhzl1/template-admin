@@ -33,6 +33,7 @@ const CustomInput: FC<CustomInputProps & FormControlProps> = ({
     variant: "filled",
     autoComplete: "off",
     boxShadow: "base",
+    color: "#334155",
   };
 
   return (
