@@ -15,7 +15,7 @@ const Error404 = () => {
           La página que intentas buscar no existe
         </span>
 
-        <Link to={home} className="btn-link transitions">
+        <Link to={home} className="btn-link  ">
           Ir al Inicio
         </Link>
       </div>

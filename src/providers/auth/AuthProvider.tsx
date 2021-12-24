@@ -45,6 +45,15 @@ const AuthProvider = ({
 }) => {
   const [state, dispatch] = useReducer(authReducer, {}, init);
 
+  //si el usuario esta autenticado todas las llamadas al api incluiran el token
+  if (state.status === "is-authenticated") {
+    locatelApi.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${state.token}`;
+  } else {
+    delete locatelApi.defaults.headers.common["Authorization"];
+  }
+
   const login = async ({ email, password }: FormLoginProps) => {
     const { errorMsg } = state;
 
@@ -71,7 +80,6 @@ const AuthProvider = ({
   };
 
   const logout = () => {
-    console.log("paso por aqui");
     dispatch({ type: "logout" });
     localStorage.removeItem("data-user");
   };

@@ -39,11 +39,7 @@ const Topbar = () => {
     };
   }, []);
   return (
-    <div
-      className={` ${
-        tobarBlur && "topbar-on-scroll"
-      } topbar-general backdrop-blur-md`}
-    >
+    <div className={` ${tobarBlur && "topbar-on-scroll"} topbar-general`}>
       <div className="flex justify-between items-center h-full py-2 px-5">
         <h2 className="text-slate-600 font-bold dark:text-gray-300 text-xl">
           Administrador Locatel

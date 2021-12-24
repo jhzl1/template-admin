@@ -1,0 +1,11 @@
+.rdt_TableCol_Sortable {
+  @apply text-slate-800 dark:text-gray-300 text-lg py-4 transition-all duration-200;
+}
+
+.rdt_TableCol {
+  @apply bg-gray-300 dark:bg-slate-800 transition-all duration-200;
+}
+
+.rdt_TableCell {
+  @apply text-slate-700 dark:text-gray-300;
+}
