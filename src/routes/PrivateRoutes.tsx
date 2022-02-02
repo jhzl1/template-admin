@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { routes } from "./routes";
 
-const PrivateRoutes = ({ children }: any) => {
+const PrivateRoutes = ({ children }: { children: JSX.Element }) => {
   const { login } = routes;
 
   const { status } = useAuth();

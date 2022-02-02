@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import AppProvider from "./context/AppProvider";
+import AppContext from "./context/AppContext";
 
 ReactDOM.render(
-  <AppProvider>
+  <AppContext>
     <App />
-  </AppProvider>,
+  </AppContext>,
   document.getElementById("root")
 );

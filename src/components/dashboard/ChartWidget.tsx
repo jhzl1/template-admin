@@ -31,7 +31,7 @@ const ChartWidget = () => {
   };
 
   return (
-    <div className=" bg-white dark:bg-gradient-to-br from-slate-600 to-gray-800 p-2 shadow-lg rounded-lg col-span-2 row-span-2 transitions">
+    <div className=" bg-white dark:bg-gradient-to-br from-slate-600 to-gray-800 p-2 shadow-lg rounded-lg col-span-2 md:col-span-1 xl:col-span-2 row-span-2 transitions">
       <Doughnut data={data} options={{ maintainAspectRatio: false }} />
     </div>
   );

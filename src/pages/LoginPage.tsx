@@ -8,11 +8,11 @@ const LoginPage = () => {
 
   return (
     <div className="unprotected-screen-container">
-      <div className="bg-white p-10 rounded-xl shadow-2xl flex flex-col items-center w-1/4">
+      <div className="container-form-login">
         <img
           src={require("../assets/img/unidigital-black.jpg")}
           alt="Corporacion Unidigital"
-          className="h-14 mb-5"
+          className="h-14 mb-14 md:mb-5"
         />
 
         <Text
@@ -26,10 +26,7 @@ const LoginPage = () => {
 
         <FormLogin />
 
-        <Link
-          to={home}
-          className="font-medium text-blue-500 hover:text-blue-800 transition duration-300 "
-        >
+        <Link to={home} className="custom-link mt-14 md:mt-5">
           ¿Ha olvidado la contraseña?
         </Link>
       </div>

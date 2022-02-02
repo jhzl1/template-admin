@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div id="app" className="bg-slate-100 min-h-screen dark:bg-slate-700  ">
+      <div id="app">
         <Routes>
           <Route path={login} element={<LoginPage />} />
           <Route path={error404} element={<Error404 />} />

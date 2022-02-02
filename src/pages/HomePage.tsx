@@ -45,13 +45,13 @@ const HomePage = () => {
 
   return (
     <PageContainer titlePage="Inicio" bgTransparent>
-      <div className="grid grid-cols-4 gap-4 h-24 my-6">
+      <div className="grid  grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 my-6">
         {shortsWidgets.map((widget, i) => (
           <ShortWidgets key={i} {...widget} />
         ))}
       </div>
 
-      <div className="grid grid-cols-5 grid-rows-2 h-[500px] gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 xl:grid-rows-2 xl:h-[500px] gap-4">
         <TransactionsWidget />
         <ChartWidget />
 

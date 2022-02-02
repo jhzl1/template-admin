@@ -44,13 +44,15 @@ const FormLogin: FC = () => {
               type="password"
               showLabel
             />
-
-            {/* <ValidateWithApi /> */}
-
             {isSubmitting ? (
               <LoadingIndicator />
             ) : (
-              <Button colorScheme="messenger" my="2" type="submit">
+              <Button
+                colorScheme="messenger"
+                my="2"
+                type="submit"
+                fontWeight="medium"
+              >
                 Iniciar sesión
               </Button>
             )}

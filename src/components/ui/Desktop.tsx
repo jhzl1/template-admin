@@ -7,7 +7,7 @@ const Desktop = () => {
   const { error404 } = routes;
 
   return (
-    <div className="ml-64 py-5 px-10 w-full h-full flex flex-col items-stretch relative">
+    <div className="lg:ml-64 md:py-5 md:px-10 w-full flex flex-col items-stretch bg-gray-100 dark:bg-slate-700 transitions">
       <Topbar />
 
       <Routes>
