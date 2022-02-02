@@ -30,7 +30,7 @@ body {
 
 #app {
   font-family: "Inter";
-  @apply text-gray-500 dark:text-gray-300 transition-all duration-200;
+  @apply text-gray-500 dark:text-gray-300 transition-all duration-200 h-screen;
 }
 
 .full-center {

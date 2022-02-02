@@ -4,7 +4,7 @@ import NavbarProvider from "../providers/navbar/NavbarProvider";
 
 const DashboardPage = () => {
   return (
-    <div className="flex flex-row relative">
+    <div className="flex flex-row relative min-h-screen">
       <NavbarProvider>
         <Navbar />
         <Desktop />

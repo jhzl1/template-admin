@@ -8,6 +8,7 @@ import {
   AccordionPanel,
   Box,
 } from "@chakra-ui/react";
+import useToggleNavbar from "../../hooks/useToggleNavbar";
 
 export interface SubnavItem {
   path: string;
@@ -22,6 +23,8 @@ export interface ItemNavbarProps {
 }
 
 const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
+  const { handleShowNavbar } = useToggleNavbar();
+
   return (
     <div className="mb-3">
       {subnavItem ? (
@@ -58,6 +61,7 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
                   <NavLink
                     to={path || "/dashboard"}
                     className="sublink-navbar transitions"
+                    onClick={handleShowNavbar}
                   >
                     {title}
                   </NavLink>
@@ -70,6 +74,7 @@ const ItemNavbar: FC<ItemNavbarProps> = ({ path, title, icon, subnavItem }) => {
           <NavLink
             to={path || "/dashboard"}
             className="link-navbar p-2 flex items-center transitions"
+            onClick={handleShowNavbar}
           >
             <span className="icon-link ml-2 transitions">{icon}</span>
             {title}

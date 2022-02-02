@@ -5,7 +5,7 @@ import { MdPointOfSale } from "react-icons/md";
 import { FaMoneyBill } from "react-icons/fa";
 import { routes } from "../../routes/routes";
 
-const { cashiers } = routes;
+const { cashiers, addBeneficiary } = routes;
 
 export const itemsNavbar: ItemNavbarProps[] = [
   { title: "Inicio", path: "/", icon: <FiHome /> },
@@ -15,7 +15,7 @@ export const itemsNavbar: ItemNavbarProps[] = [
     title: "Tarjetas prepag.",
     icon: <BsFillCreditCardFill />,
     subnavItem: [
-      { title: "Registrar beneficiario", path: "/" },
+      { title: "Registrar beneficiario", path: addBeneficiary },
       { title: "Asignar tarjeta", path: "/" },
       { title: "Recargar tarjeta", path: "/" },
     ],
